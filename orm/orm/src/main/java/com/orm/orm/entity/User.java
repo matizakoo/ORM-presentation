@@ -7,8 +7,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "category")
-public class Category {
+@Table(name = "user")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -17,11 +17,19 @@ public class Category {
     @Column(name = "name")
     private String name;
 
-    public Category(String name) {
+    @Column(name = "surname")
+    private String surname;
+
+    @Column(name = "age")
+    private Integer age;
+
+    public User(String name, String surname, Integer age) {
         this.name = name;
+        this.surname = surname;
+        this.age = age;
     }
 
-    public Category() {
+    public User() {
 
     }
 }
